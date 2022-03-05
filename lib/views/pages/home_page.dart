@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:buahly/views/layouts/base_layout.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,15 +6,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          "Hello, world!",
-          style: TextStyle(
-            fontSize: Theme.of(context).textTheme.headline1?.fontSize,
-          )
-        ),
-      ),
+    return BaseLayout(
+      child: Text(
+        "Buahly",
+        style: TextStyle(
+          fontSize: Theme.of(context).textTheme.headline1?.fontSize,
+        )
+      )
     );
   }
 }
