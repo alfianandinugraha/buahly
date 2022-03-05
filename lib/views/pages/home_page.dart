@@ -1,5 +1,7 @@
+import 'package:buahly/themes/colors/primary_colors.dart';
 import 'package:buahly/themes/icons/asset_icon.dart';
 import 'package:buahly/views/layouts/base_layout.dart';
+import 'package:buahly/views/widgets/search_field.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,17 +14,26 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Buahly".toUpperCase(),
-            style: TextStyle(
-              fontSize: Theme.of(context).textTheme.caption?.fontSize,
-              fontWeight: Theme.of(context).textTheme.caption?.fontWeight,
-              color: Theme.of(context).textTheme.caption?.color,
-            )
-          ),
-          const Icon(AssetIcon.duoChevron, color: Colors.amber),
-          ElevatedButton(onPressed: () {}, child: Text("Click me")),
-          OutlinedButton(onPressed: () {}, child: Text("Click me")),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Buahly",
+                style: TextStyle(
+                  fontSize: Theme.of(context).textTheme.headline1?.fontSize,
+                  fontWeight: Theme.of(context).textTheme.headline1?.fontWeight,
+                )
+              ),
+              const Icon(
+                AssetIcon.info,
+                size: 18,
+                color: Color(0xFFC6C6C6),
+              )
+            ],
+          ), 
+          const SizedBox(height: 16),
+          const SearchField()
         ],
       )
     );
