@@ -1,3 +1,5 @@
+import 'package:buahly/themes/mode/light_theme.dart';
+import 'package:buahly/views/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,13 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: LightMode.theme(),
       home: const Scaffold(
-        body: Center(
-          child: Text("Hello world!"),
-        ),
+        body: HomePage(),
       )
     );
   }
