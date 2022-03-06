@@ -14,10 +14,8 @@ class BaseLayout extends StatelessWidget {
         },
         behavior: HitTestBehavior.translucent,
         child: Padding(
-          padding: const EdgeInsets.only(
-            top: 46,
-            left: 28,
-            right: 28,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 28
           ),
           child: child,
         ),

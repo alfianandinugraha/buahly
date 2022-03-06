@@ -29,17 +29,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const HomeHeading(), 
-          const SizedBox(height: 16),
-          const SearchField(),
-          const SizedBox(height: 14),
-          FruitItem(fruit: dummyFruit),
-          const SizedBox(height: 14),
-          FruitItem(fruit: dummyFruit)
+      child: CustomScrollView(
+        scrollBehavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: const [
+                SizedBox(height: 46),
+                HomeHeading(),
+                SizedBox(height: 16),
+                SearchField(),
+                SizedBox(height: 16),
+              ],
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    FruitItem(fruit: dummyFruit),
+                    const SizedBox(height: 14)
+                  ],
+                );
+              },
+              childCount: randomArr.length
+            )
+          )
         ],
       )
     );
