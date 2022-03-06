@@ -11,7 +11,8 @@ class MainRouter {
         );
       case '/detail':
         return MaterialPageRoute(
-          builder: (_) => const DetailPage()
+          builder: (_) => const DetailPage(),
+          settings: settings
         );
       default:
     }
