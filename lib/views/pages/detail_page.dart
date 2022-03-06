@@ -1,6 +1,7 @@
 import 'package:buahly/themes/colors/primary_colors.dart';
 import 'package:buahly/themes/icons/asset_icon.dart';
 import 'package:buahly/views/layouts/base_layout.dart';
+import 'package:buahly/views/widgets/property.dart';
 import 'package:flutter/material.dart';
 
 class DetailPageArguments {
@@ -47,6 +48,34 @@ class DetailPage extends StatelessWidget {
               color: PrimaryColors.pallete[500]
             )
           ),
+          const SizedBox(height: 20),
+          Row(
+            children: const [
+              Property(
+                label: "id",
+                child: Text("6")
+              ),
+              Property(
+                label: "genus",
+                child: Text("Musa")
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          Row(
+            children: const [
+              Property(
+                label: "family",
+                child: Text("Musaceae")
+              ),
+              Property(
+                label: "order",
+                child: Text("Zingiberales")
+              )
+            ],
+          )
         ],
       )
     );
