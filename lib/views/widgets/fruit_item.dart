@@ -10,66 +10,67 @@ class FruitItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.only(
-            left: 18
-          ),
-          margin: const EdgeInsets.only(
-            right: 11
-          ),
-          width: double.infinity,
-          height: 41,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(4),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.05),
-                blurRadius: 8,
-                offset: const Offset(0, 4)
-              )
-            ]
-          ),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(fruit.name),
-          ),
-        ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            width: 6,
-            height: 41,
-            alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
-              color: PrimaryColors.pallete[500],
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(4),
-                bottomLeft: Radius.circular(4)
-              )
+    return SizedBox(
+      height: 41,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.only(
+              left: 18
             ),
-          ),
-        ),
-        Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-            width: 22,
-            height: 22,
-            decoration: BoxDecoration(
-              color: PrimaryColors.pallete[500],
-              borderRadius: BorderRadius.circular(22)
+            margin: const EdgeInsets.only(
+              right: 11
             ),
-            child: const Icon(
-              AssetIcon.duoChevron, 
-              size: 18,
+            width: double.infinity,
+            decoration: BoxDecoration(
               color: Colors.white,
+              borderRadius: BorderRadius.circular(4),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 8,
+                  offset: const Offset(0, 4)
+                )
+              ]
+            ),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(fruit.name),
             ),
           ),
-        ),
-      ],
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              width: 6,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                color: PrimaryColors.pallete[500],
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(4),
+                  bottomLeft: Radius.circular(4)
+                )
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              width: 22,
+              height: 22,
+              decoration: BoxDecoration(
+                color: PrimaryColors.pallete[500],
+                borderRadius: BorderRadius.circular(22)
+              ),
+              child: const Icon(
+                AssetIcon.duoChevron, 
+                size: 18,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
