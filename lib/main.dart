@@ -1,3 +1,4 @@
+import 'package:buahly/core/router/main_router.dart';
 import 'package:buahly/themes/mode/light_theme.dart';
 import 'package:buahly/views/pages/home_page.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: LightMode.theme(),
       home: const Scaffold(
         body: HomePage(),
-      )
+      ),
+      onGenerateRoute: MainRouter.generate,
     );
   }
 }
