@@ -1,6 +1,7 @@
 import 'package:buahly/core/models/fruit.dart';
 import 'package:buahly/themes/colors/primary_colors.dart';
 import 'package:buahly/themes/icons/asset_icon.dart';
+import 'package:buahly/views/pages/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class FruitItem extends StatelessWidget {
@@ -12,7 +13,12 @@ class FruitItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/detail');
+        DetailPage.go(
+          context, 
+          DetailPageArguments(
+            id: fruit.id
+          )
+        );
       },
       child: SizedBox(
         height: 41,
