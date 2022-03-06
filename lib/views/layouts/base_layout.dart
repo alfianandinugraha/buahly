@@ -8,9 +8,19 @@ class BaseLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(28),
-        child: child,
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        behavior: HitTestBehavior.translucent,
+        child: Padding(
+          padding: const EdgeInsets.only(
+            top: 46,
+            left: 28,
+            right: 28,
+          ),
+          child: child,
+        ),
       ),
       backgroundColor: const Color(0xFFFBFBFB),
     );
