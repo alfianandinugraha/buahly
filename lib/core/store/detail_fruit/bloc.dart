@@ -24,13 +24,18 @@ class DetailFruitBloc extends Bloc<DetailFruitEvent, DetailFruitState> {
           var response = await FruitRepository().getById(event.id);
           var fruit = Fruit.fromJson(response.body);
           emit(DetailFruitLoaded(fruit: fruit));
-
-          cacheFruitBox.store(fruit).then((value) => cacheFruitBox.close());
         } catch (err) {
           emit(DetailFruitError());
-          cacheFruitBox.close();
+        } finally {
+          await cacheFruitBox.close();
         }
       }
+    });
+
+    on<CacheDetailFruit>((event, emit) async {
+      var cacheFruitBox = DetailFruitCache(id: event.fruit.id);
+      await cacheFruitBox.open();
+      cacheFruitBox.store(event.fruit).then((value) => cacheFruitBox.close());
     });
   }
 }

@@ -35,7 +35,13 @@ class DetailPage extends StatelessWidget {
           const SizedBox(height: 46),
           GestureDetector(
             onTap: () {
-              // print(Navigator.of(context).canPop());
+              var bloc = BlocProvider.of<DetailFruitBloc>(context);
+              var state = bloc.state;
+              if (state is DetailFruitLoaded) {
+                bloc.add(
+                  CacheDetailFruit(state.fruit)
+                );
+              }
               Navigator.of(context).pop();
             },
             child: const Icon(
