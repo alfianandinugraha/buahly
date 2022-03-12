@@ -16,6 +16,7 @@ class ListFruitBloc extends Bloc<ListFruitEvent, FruitState> {
         var fruits = List<Fruit>.from(body.map((e) => Fruit.fromMap(e)));
         emit(ListFruitLoaded(fruits: fruits));
       } catch (err) {
+        print(err);
         emit(ListFruitError());
       }
     });
