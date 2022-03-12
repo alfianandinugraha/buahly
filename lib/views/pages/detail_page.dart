@@ -6,7 +6,7 @@ import 'package:buahly/views/widgets/property.dart';
 import 'package:flutter/material.dart';
 
 class DetailPageArguments {
-  final String id;
+  final int id;
 
   const DetailPageArguments({required this.id});
 }
@@ -22,8 +22,6 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as DetailPageArguments;
     final id = args.id;
-    
-    print("Fetcing fruit $id");
 
     return BaseLayout(
       child: Column(
@@ -33,7 +31,8 @@ class DetailPage extends StatelessWidget {
           const SizedBox(height: 46),
           GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              // print(Navigator.of(context).canPop());
+              Navigator.of(context).pop();
             },
             child: const Icon(
               AssetIcon.arrowLeft,

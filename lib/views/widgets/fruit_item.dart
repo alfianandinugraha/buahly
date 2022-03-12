@@ -13,12 +13,15 @@ class FruitItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        DetailPage.go(
-          context, 
-          DetailPageArguments(
-            id: fruit.id
-          )
-        );
+        DetailPage.go(context, DetailPageArguments(
+          id: fruit.id
+        ));
+        // Navigator.of(context).pushNamed(
+        //   "/detail", 
+        //   arguments: DetailPageArguments(
+        //     id: fruit.id
+        //   )
+        // );
       },
       child: SizedBox(
         height: 41,
