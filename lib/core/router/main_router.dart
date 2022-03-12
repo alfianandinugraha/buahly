@@ -1,3 +1,4 @@
+import 'package:buahly/core/store/detail_fruit/bloc.dart';
 import 'package:buahly/core/store/list_fruit/bloc.dart';
 import 'package:buahly/views/pages/detail_page.dart';
 import 'package:buahly/views/pages/home_page.dart';
@@ -17,7 +18,10 @@ class MainRouter {
         );
       case '/detail':
         return MaterialPageRoute(
-          builder: (_) => const DetailPage(),
+          builder: (_) => BlocProvider(
+            create: (_) => DetailFruitBloc(),
+            child: const DetailPage(),
+          ),
           settings: settings
         );
       default:
