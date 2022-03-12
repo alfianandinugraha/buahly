@@ -1,5 +1,5 @@
 import 'package:buahly/themes/colors/primary_colors.dart';
-import 'package:buahly/views/widgets/property.dart';
+import 'package:buahly/views/templates/detail/property.dart';
 import 'package:flutter/material.dart';
 
 class NutritionProperty extends StatelessWidget {

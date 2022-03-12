@@ -1,6 +1,6 @@
 import 'package:buahly/core/store/detail_fruit/bloc.dart';
 import 'package:buahly/core/store/detail_fruit/state.dart';
-import 'package:buahly/views/widgets/property.dart';
+import 'package:buahly/views/templates/detail/property.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

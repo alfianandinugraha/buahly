@@ -2,9 +2,9 @@ import 'package:buahly/core/store/list_fruit/bloc.dart';
 import 'package:buahly/core/store/list_fruit/event.dart';
 import 'package:buahly/core/store/list_fruit/state.dart';
 import 'package:buahly/views/layouts/base_layout.dart';
-import 'package:buahly/views/widgets/fruit_item.dart';
-import 'package:buahly/views/widgets/home_heading.dart';
-import 'package:buahly/views/widgets/search_field.dart';
+import 'package:buahly/views/templates/home/fruit_item.dart';
+import 'package:buahly/views/templates/home/home_heading.dart';
+import 'package:buahly/views/templates/home/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
