@@ -12,7 +12,7 @@ class FruitRepository {
     return response;
   }
 
-  Future<http.Response> getById(String fruitId) async {
+  Future<http.Response> getById(int fruitId) async {
     final uri = Uri.parse("$baseUrl/fruit/$fruitId");
 
     var client = http.Client();
