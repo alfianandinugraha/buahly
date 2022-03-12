@@ -13,3 +13,5 @@ class CacheDetailFruit extends DetailFruitEvent {
 
   CacheDetailFruit(this.fruit);
 }
+
+class RefreshDetailFruit extends DetailFruitEvent {}

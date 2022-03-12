@@ -80,13 +80,31 @@ class DetailPage extends StatelessWidget {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      state.fruit.name,
-                      style: TextStyle(
-                        fontSize: Theme.of(context).textTheme.headline1?.fontSize,
-                        fontWeight: Theme.of(context).textTheme.headline1?.fontWeight,
-                        color: PrimaryColors.pallete[500]
-                      )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          state.fruit.name,
+                          style: TextStyle(
+                            fontSize: Theme.of(context).textTheme.headline1?.fontSize,
+                            fontWeight: Theme.of(context).textTheme.headline1?.fontWeight,
+                            color: PrimaryColors.pallete[500]
+                          )
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            BlocProvider
+                              .of<DetailFruitBloc>(context)
+                              .add(RefreshDetailFruit());
+                          },
+                          child: const Icon(
+                            Icons.refresh,
+                            size: 26,
+                            color: Color(0xFFC6C6C6),
+                          ),
+                        )
+                      ],
                     ),
                     const SizedBox(height: 20),
                     const FruitInfo(),
