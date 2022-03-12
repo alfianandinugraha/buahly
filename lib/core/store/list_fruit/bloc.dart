@@ -6,7 +6,7 @@ import 'package:buahly/core/store/list_fruit/event.dart';
 import 'package:buahly/core/store/list_fruit/state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ListFruitBloc extends Bloc<FruitEvent, FruitState> {
+class ListFruitBloc extends Bloc<ListFruitEvent, FruitState> {
   ListFruitBloc() : super(ListFruitEmpty()) {
     on<FetchListFruit>((event, emit) async {
       emit(ListFruitFetched());

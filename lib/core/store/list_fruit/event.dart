@@ -1,3 +1,3 @@
-abstract class FruitEvent {}
+abstract class ListFruitEvent {}
 
-class FetchListFruit extends FruitEvent {}
+class FetchListFruit extends ListFruitEvent {}
