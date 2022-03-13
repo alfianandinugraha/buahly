@@ -26,6 +26,13 @@ class ListFruitBloc extends Bloc<ListFruitEvent, FruitState> {
 
     on<FilterListFruit>((event, emit) {
       if (state is ListFruitLoaded) {
+        if (event.keyword.isEmpty) {
+          emit(
+            ListFruitLoaded(fruits: _fruits)
+          );
+        return;
+        }
+
         final filteredFruits = _fruits
           .where((item) => item.name.toLowerCase().contains(event.keyword))
           .toList();
