@@ -55,6 +55,27 @@ class HomePage extends StatelessWidget {
                 );
               }
 
+              if (state is ListFruitError) {
+                return SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      const Text("Failed to get all fruit"),
+                      const SizedBox(height: 6),
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          BlocProvider.of<ListFruitBloc>(context).add(FetchListFruit());
+                        },
+                        label: const Text("Refresh"),
+                        icon: const Icon(
+                          Icons.refresh_outlined,
+                          size: 14,
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              }
+
               return const SliverToBoxAdapter();
             },
           ),
