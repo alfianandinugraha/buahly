@@ -1,6 +1,9 @@
+import 'package:buahly/core/store/list_fruit/bloc.dart';
+import 'package:buahly/core/store/list_fruit/event.dart';
 import 'package:buahly/themes/colors/primary_colors.dart';
 import 'package:buahly/themes/icons/asset_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchField extends StatefulWidget {
   const SearchField({Key? key}) : super(key: key);
@@ -44,6 +47,9 @@ class _SearchFieldState extends State<SearchField> {
             ),
             child: TextField(
               focusNode: focusNode,
+              onChanged: (keyword) {
+                BlocProvider.of<ListFruitBloc>(context).add(FilterListFruit(keyword: keyword));
+              },
               decoration: const InputDecoration.collapsed(
                 hintText: "Search Fruit",
                 hintStyle: TextStyle(
