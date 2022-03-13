@@ -15,7 +15,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseLayout(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const SizedBox(height: 46),
           GestureDetector(
@@ -59,7 +59,25 @@ class AboutPage extends StatelessWidget {
                 )
               ]
             ),
-          )
+          ),
+          const SizedBox(height: 28),
+          ElevatedButton.icon(
+            onPressed: () {},
+            label: const Text("Source code"),
+            icon: const Icon(
+              AssetIcon.github,
+              size: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          OutlinedButton.icon(
+            onPressed: () {},
+            label: const Text("About me"),
+            icon: const Icon(
+              AssetIcon.user,
+              size: 14,
+            ),
+          ),
         ],
       )
     );
