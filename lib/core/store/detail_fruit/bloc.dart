@@ -1,5 +1,6 @@
 import 'package:buahly/core/cache/detail_fruit.dart';
 import 'package:buahly/core/models/fruit.dart';
+import 'package:buahly/core/providers/fruit_provider.dart';
 import 'package:buahly/core/repositories/fruit_repository.dart';
 import 'package:buahly/core/store/detail_fruit/event.dart';
 import 'package:buahly/core/store/detail_fruit/state.dart';
@@ -21,8 +22,7 @@ class DetailFruitBloc extends Bloc<DetailFruitEvent, DetailFruitState> {
         emit(DetailFruitFetched());
 
         try {
-          var response = await FruitRepository().getById(event.id);
-          var fruit = Fruit.fromJson(response.body);
+          var fruit = await FruitProvider().getById(event.id);
           emit(DetailFruitLoaded(fruit: fruit));
         } catch (err) {
           emit(DetailFruitError());
