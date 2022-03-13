@@ -1,5 +1,6 @@
 import 'package:buahly/core/store/detail_fruit/bloc.dart';
 import 'package:buahly/core/store/list_fruit/bloc.dart';
+import 'package:buahly/views/pages/about_page.dart';
 import 'package:buahly/views/pages/detail_page.dart';
 import 'package:buahly/views/pages/home_page.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,10 @@ class MainRouter {
             child: const DetailPage(),
           ),
           settings: settings
+        );
+      case '/about':
+        return MaterialPageRoute(
+          builder: (_) => const AboutPage()
         );
       default:
         return null;

@@ -1,4 +1,5 @@
 import 'package:buahly/themes/icons/asset_icon.dart';
+import 'package:buahly/views/pages/about_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeading extends StatelessWidget {
@@ -17,10 +18,15 @@ class HomeHeading extends StatelessWidget {
             fontWeight: Theme.of(context).textTheme.headline1?.fontWeight,
           )
         ),
-        const Icon(
-          AssetIcon.info,
-          size: 18,
-          color: Color(0xFFC6C6C6),
+        GestureDetector(
+          onTap: () {
+            AboutPage.go(context);
+          },
+          child: const Icon(
+            AssetIcon.info,
+            size: 18,
+            color: Color(0xFFC6C6C6),
+          ),
         )
       ],
     );
