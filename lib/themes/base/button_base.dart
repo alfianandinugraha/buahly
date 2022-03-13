@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ButtonBase {
   static ButtonStyle base = ButtonStyle(
     padding: MaterialStateProperty.all(
-      const EdgeInsets.all(12)
+      const EdgeInsets.all(16)
     ),
     shape: MaterialStateProperty.all(
       RoundedRectangleBorder(
