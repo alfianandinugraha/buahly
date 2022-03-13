@@ -51,15 +51,16 @@ class _SearchFieldState extends State<SearchField> {
             child: TextField(
               focusNode: focusNode,
               onChanged: (keyword) {
-                BlocProvider.of<ListFruitBloc>(context).add(SearchListFruit(isSearch: true));
+                var bloc = BlocProvider.of<ListFruitBloc>(context);
+                bloc.add(SearchListFruit(isSearch: true));
                 if (timer != null) {
                   timer?.cancel();
                   timer = null;
                 }
 
-                timer = Timer(const Duration(seconds: 2), () {
-                  BlocProvider.of<ListFruitBloc>(context).add(SearchListFruit(isSearch: false));
-                  BlocProvider.of<ListFruitBloc>(context).add(FilterListFruit(keyword: keyword));
+                timer = Timer(const Duration(milliseconds: 500), () {
+                  bloc.add(SearchListFruit(isSearch: false));
+                  bloc.add(FilterListFruit(keyword: keyword));
                 });
               },
               decoration: const InputDecoration.collapsed(
