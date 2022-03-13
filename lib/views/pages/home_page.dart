@@ -82,6 +82,12 @@ class HomePage extends StatelessWidget {
               }
 
               if (state is ListFruitLoaded && !state.isSearch) {
+                if (state.fruits.isEmpty) {
+                  return const SliverToBoxAdapter(
+                    child: Text("Fruit not found"),
+                  );
+                }
+
                 return SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
