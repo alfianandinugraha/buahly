@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:buahly/core/store/list_fruit/bloc.dart';
 import 'package:buahly/core/store/list_fruit/event.dart';
 import 'package:buahly/themes/colors/primary_colors.dart';
@@ -15,6 +17,7 @@ class SearchField extends StatefulWidget {
 class _SearchFieldState extends State<SearchField> {
   FocusNode focusNode = FocusNode();
   bool isFocus = false;
+  Timer? timer;
 
   @override
   void initState() {
@@ -48,7 +51,14 @@ class _SearchFieldState extends State<SearchField> {
             child: TextField(
               focusNode: focusNode,
               onChanged: (keyword) {
-                BlocProvider.of<ListFruitBloc>(context).add(FilterListFruit(keyword: keyword));
+                if (timer != null) {
+                  timer?.cancel();
+                  timer = null;
+                }
+
+                timer = Timer(const Duration(seconds: 2), () {
+                  BlocProvider.of<ListFruitBloc>(context).add(FilterListFruit(keyword: keyword));
+                });
               },
               decoration: const InputDecoration.collapsed(
                 hintText: "Search Fruit",
