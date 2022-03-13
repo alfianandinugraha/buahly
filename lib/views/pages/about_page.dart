@@ -38,29 +38,28 @@ class AboutPage extends StatelessWidget {
               ],
             ),
           ),
-        const SizedBox(height: 16),
-        const Text("Buahly is app to get information about fruit. The purpose of this app is for my learning path. Right now, I am learning Flutter for Android Development."),
-        const SizedBox(height: 11),
-        RichText(
-
-          text: TextSpan(
-            style: TextBase.bodyText2,
-            children: [
-              const TextSpan(
-                text: "All information about fruit are served from ",
-              ),
-              TextSpan(
-                text: "https://www.fruityvice.com/",
-                style: TextStyle(
-                  color: PrimaryColors.pallete[500]
+          const SizedBox(height: 16),
+          const Text("Buahly is app to get information about fruit. The purpose of this app is for my learning path. Right now, I am learning Flutter for Android Development."),
+          const SizedBox(height: 11),
+          RichText(
+            text: TextSpan(
+              style: TextBase.bodyText2,
+              children: [
+                const TextSpan(
+                  text: "All information about fruit are served from ",
+                ),
+                TextSpan(
+                  text: "https://www.fruityvice.com/",
+                  style: TextStyle(
+                    color: PrimaryColors.pallete[500]
+                  )
+                ),
+                const TextSpan(
+                  text: " (Thank you Fruityvice 🎉)."
                 )
-              ),
-              const TextSpan(
-                text: " (Thank you Fruityvice 🎉)."
-              )
-            ]
-          ),
-        )
+              ]
+            ),
+          )
         ],
       )
     );
