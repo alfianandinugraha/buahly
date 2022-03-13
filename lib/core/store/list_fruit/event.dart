@@ -7,3 +7,9 @@ class FilterListFruit extends ListFruitEvent {
 
   FilterListFruit({required this.keyword});
 }
+
+class SearchListFruit extends ListFruitEvent {
+  bool isSearch;
+
+  SearchListFruit({required this.isSearch});
+}

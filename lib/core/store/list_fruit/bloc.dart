@@ -42,5 +42,9 @@ class ListFruitBloc extends Bloc<ListFruitEvent, FruitState> {
         );
       }
     });
+
+    on<SearchListFruit>((event, emit) {
+      emit(ListFruitLoaded(isSearch: event.isSearch, fruits: _fruits));
+    });
   }
 }

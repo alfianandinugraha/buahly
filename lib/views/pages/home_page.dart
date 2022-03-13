@@ -65,7 +65,23 @@ class HomePage extends StatelessWidget {
                 return const SliverToBoxAdapter();
               }
 
-              if (state is ListFruitLoaded) {
+              if (state is ListFruitLoaded && state.isSearch) {
+                return SliverToBoxAdapter(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      CircularProgressIndicator(),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Text("Searching fruits...")
+                    ],
+                  ),
+                );
+              }
+
+              if (state is ListFruitLoaded && !state.isSearch) {
                 return SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
